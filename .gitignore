@@ -24,6 +24,8 @@ yarn-error.log*
 uploads/
 server/uploads/*
 !server/uploads/.gitkeep
+data/
+server/data/
 
 # OS & Editor
 .DS_Store

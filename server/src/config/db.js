@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const mongoose = require('mongoose');
 const env = require('./env');
 
@@ -12,19 +14,37 @@ const connectDB = async () => {
     console.log(`[MongoDB] Connected to database: ${conn.connection.host}`);
     return conn;
   } catch (err) {
-    console.warn(`[MongoDB] Standard connection to ${env.MONGO_URI} failed: ${err.message}`);
-    console.log('[MongoDB] Launching embedded MongoDB instance for full standalone execution...');
+    console.warn(`[MongoDB] External connection to ${env.MONGO_URI} unavailable: ${err.message}`);
+    console.log('[MongoDB] Launching embedded MongoDB instance with local persistent storage...');
 
     try {
       const { MongoMemoryServer } = require('mongodb-memory-server');
-      mongoMemoryServer = await MongoMemoryServer.create({
+      const isTest = process.env.NODE_ENV === 'test';
+
+      const options = {
         binary: {
           version: '4.4.29',
         },
-      });
+      };
+
+      if (!isTest) {
+        const dbDir = path.join(__dirname, '../../../data/db');
+        if (!fs.existsSync(dbDir)) {
+          fs.mkdirSync(dbDir, { recursive: true });
+        }
+        options.instance = {
+          dbPath: dbDir,
+          storageEngine: 'wiredTiger',
+        };
+      }
+
+      mongoMemoryServer = await MongoMemoryServer.create(options);
       const memUri = mongoMemoryServer.getUri();
       const memConn = await mongoose.connect(memUri);
       console.log(`[MongoDB] Connected to embedded MongoDB: ${memUri}`);
+      if (!isTest) {
+        console.log(`[MongoDB] Data persisted in local storage: data/db`);
+      }
       return memConn;
     } catch (memErr) {
       console.error('[MongoDB] Failed to launch embedded MongoDB instance:', memErr.message);
