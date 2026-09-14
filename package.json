@@ -1,0 +1,22 @@
+{
+  "name": "company-saas-platform",
+  "version": "1.0.0",
+  "description": "Production-Grade Employee & Project Management SaaS Platform",
+  "main": "server/src/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "npm --prefix server run dev",
+    "client:dev": "npm --prefix client run dev",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client start",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server test",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "author": "",
+  "license": "MIT"
+}

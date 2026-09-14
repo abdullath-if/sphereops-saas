@@ -1,0 +1,37 @@
+services:
+  # SphereOps Backend API Service
+  - type: web
+    name: sphereops-api
+    runtime: node
+    plan: free
+    buildCommand: npm --prefix server install
+    startCommand: npm --prefix server start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+
+  # SphereOps Frontend Static Application
+  - type: web
+    name: sphereops-web
+    runtime: static
+    plan: free
+    buildCommand: npm --prefix client install && npm --prefix client run build
+    staticPublishPath: client/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: sphereops-api
+          property: host
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
