@@ -53,15 +53,26 @@ const seedDatabase = async (standalone = true) => {
 
     const usersData = [
       {
-        name: 'Alexander Wright',
+        name: 'Abdul Lathif',
+        email: 'abdul@company.com',
+        password: defaultPassword,
+        role: 'admin',
+        position: 'Lead Architect & CTO',
+        department: deptMap['Development'],
+        phone: '+1 (555) 019-2831',
+        skills: ['Full Stack Architecture', 'Node.js', 'React', 'Distributed Systems', 'Cloud Ops'],
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
+      },
+      {
+        name: 'Admin User',
         email: 'admin@company.com',
         password: defaultPassword,
         role: 'admin',
-        position: 'Chief Technology Officer',
+        position: 'Platform Administrator',
         department: deptMap['Development'],
-        phone: '+1 (555) 019-2831',
-        skills: ['Executive Strategy', 'System Architecture', 'Cloud Governance', 'Security'],
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
+        phone: '+1 (555) 019-2830',
+        skills: ['Access Control', 'Audit Review', 'Compliance', 'Security'],
+        avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150',
       },
       {
         name: 'Sarah Jenkins',
