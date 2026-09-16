@@ -1,8 +1,13 @@
 {
-  "name": "company-saas-platform",
+  "name": "sphereops-saas",
   "version": "1.0.0",
   "description": "Production-Grade Employee & Project Management SaaS Platform",
   "main": "server/src/server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abdullath-if/sphereops-saas.git"
+  },
+  "homepage": "https://github.com/abdullath-if/sphereops-saas#readme",
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "server:dev": "npm --prefix server run dev",
@@ -17,6 +22,6 @@
   "devDependencies": {
     "concurrently": "^9.1.2"
   },
-  "author": "",
+  "author": "Abdul Lathif <abdullathif6382@gmail.com>",
   "license": "MIT"
 }

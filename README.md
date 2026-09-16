@@ -6,10 +6,12 @@
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB_8_%7C_Mongoose-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com)
 [![Socket.IO](https://img.shields.io/badge/RealTime-Socket.IO_4-010101?logo=socket.io&logoColor=white)](https://socket.io)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind_CSS_3-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/abdullath-if/sphereops-saas)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-> **Live Demo:** [https://sphereops.vercel.app](https://sphereops.vercel.app) *(or run locally in 2 minutes)*  
-> **Author:** [Abdul Lathif](https://github.com/abdullath-if) • [Email](mailto:abdullathif6382@gmail.com)
+> 🔗 **Public GitHub Repository:** [https://github.com/abdullath-if/sphereops-saas](https://github.com/abdullath-if/sphereops-saas)  
+> 🌐 **Live Demo:** [https://sphereops.vercel.app](https://sphereops.vercel.app) *(or run locally in 2 minutes)*  
+> 👤 **Author:** [Abdul Lathif](https://github.com/abdullath-if) • [Email](mailto:abdullathif6382@gmail.com)
 
 ---
 
@@ -296,8 +298,9 @@ docker-compose up --build -d
 ## 👤 Author & Connect
 
 **Abdul Lathif** — Full-Stack Software Engineer  
-- **GitHub:** [@abdullath-if](https://github.com/abdullath-if)
-- **Email:** [abdullathif6382@gmail.com](mailto:abdullathif6382@gmail.com)
+- 📂 **GitHub Repository:** [https://github.com/abdullath-if/sphereops-saas](https://github.com/abdullath-if/sphereops-saas)
+- 👨‍💻 **GitHub Profile:** [@abdullath-if](https://github.com/abdullath-if)
+- ✉️ **Email:** [abdullathif6382@gmail.com](mailto:abdullathif6382@gmail.com)
 
 *Feedback, suggestions, or questions about the architecture? Feel free to open an issue or reach out directly!*
 
